@@ -2,7 +2,7 @@ import functions
 import time
 import PySimpleGUI as pGui
 
-pGui.theme("Green")
+pGui.theme("LightBlue7")
 
 clock_label = pGui.Text("", key="clock")
 label = pGui.Text("Type a todo")
@@ -22,8 +22,6 @@ window = pGui.Window("My todo app",
 while True:
     event, values = window.read(timeout=200)
     window["clock"].update(value=time.strftime("%b %d, %Y %H:%M:%S"))
-    print(event)
-    print(values)
     match event:
         case "Add":
             todos = functions.get_todos()
